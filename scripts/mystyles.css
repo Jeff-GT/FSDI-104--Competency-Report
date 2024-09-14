@@ -1,4 +1,12 @@
 *{
+    input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+    }
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
     margin: 0;
     padding: 0;
 }
@@ -315,6 +323,45 @@ header a:hover{
     width: 10%;
 }
 
+
+/*********************Pay*********************/
+.pay-container{
+    display: flex;
+    text-align: left;
+}
+.pay-container input{
+    object-position: left;
+}
+.pay-container-smaller-form{
+    width: 20%;
+}
+.pay-container img{
+    width: 10%;
+}
+.pay-form{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.pay-form h2{
+    margin-bottom: 10px;
+}
+.input-item{
+    margin-bottom: 20px;
+}
+.input-item label{
+    display: inline-block;
+    width: 100px;
+}
+.zip-control{
+    margin-left: -25px;
+}
+
+.card-number{
+    font-size: 15;
+}
 /*********************Footer*********************/
 
 footer{

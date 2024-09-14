@@ -12,6 +12,18 @@ function Pet(name,age,gender,petType,breed,service) {
     this.service=service;
 }
 
+function Pay(name,email,billAdd,city,state,zip,nameCard,numCard,expMonth,cardVV) {
+    //property=parameter
+    this.name=name;
+    this.email=email;
+    this.billAdd=billAdd;
+    this.city=city;
+    this.state=state;
+    this.nameCard=nameCard;
+    this.numCard=numCard;
+    this.expMonth=expMonth;
+    this.cardVV=cardVV;
+}
 
 
 function register() {
@@ -29,7 +41,7 @@ function register() {
     
     for(let i in petHolder){ //goes through values of checker with index i;
         if(petHolder[i]==null||petHolder[i]==''){ //checks if either null or empty ('') exists within checker;
-            alert("Please complete the form");
+            alert("Please complete Pet Info Form");
             checkerCounter++; //counter becomes 1
             break; //ends loop if either null or empty ('') exists within checker allowing alert msg to display only ONCE.
         }
@@ -47,13 +59,75 @@ function register() {
         
         
         clearForm();
+        displayRows();
         
-        if(pets.includes(null)){
-            alert("Please Complete the folder")
+    }
+}
+
+
+function payInfo(){
+    let customerName=document.getElementById("cn");
+    let customerEmail=document.getElementById("ce");
+    let customerAddr=document.getElementById("ca");
+    let customerCity=document.getElementById("cc");
+    let customerState=document.getElementById("cs");
+    let customerZip=document.getElementById("cz");
+
+    let cardName=document.getElementById("nc");
+    let cardNum=document.getElementById("numC");
+    let cardExp=document.getElementById("ec");
+    let cardCVV=document.getElementById("cvv");
+
+    let payChecker=new Pay(customerName.value,customerEmail.value,customerAddr.value,customerCity.value,customerState.value,customerZip.value,cardName.value,cardNum.value,cardExp.value,cardCVV.value,)
+
+    let checkerCounter=0;
+    
+    for(let i in payChecker){ //goes through values of checker with index i;
+        if(payChecker[i]==null||payChecker[i]==''){ //checks if either null or empty ('') exists within checker;
+            
+            checkerCounter++; //counter becomes 1
+            break; //ends loop if either null or empty ('') exists within checker allowing alert msg to display only ONCE.
+        }
+        
+    }
+    
+    
+    if(checkerCounter==0){ //if counter's value didnt change, will go through the loop.
+        let validationCntr=0
+        console.log("test");
+        if(customerEmail.value.includes('@')&&customerEmail.value.includes('.com')){  //assuming I have input type="submit" working
+            validationCntr++;
         }
         else{
-            displayRows();
+            alert("Invalid email. Please use this template ''example@email.com''.\nTry again");
         }
+        if(cardCVV.value<=999&&cardCVV.value>0){
+            validationCntr++;
+                
+        }
+        else{
+            alert("Invalid CVV. Try again");
+        }
+        if(customerZip.value<100000&&customerZip.value>500){
+            validationCntr++;
+            
+        }
+        else{
+            alert("Invalid Zip Code. Try again");
+        }
+        if(cardNum.value>1000000000000000&&cardNum.value<=9999999999999999){
+            validationCntr++;
+        }
+        else{
+            alert("Invalid Card. Try again");
+        }
+        if(validationCntr==4){
+            register();
+        }
+
+    }
+    else{
+        alert("Please Complete Payment Form");
     }
 }
 
@@ -75,21 +149,7 @@ function deletePet(petID) {
 }
 
 
-function init(){
-    //injecting hard coded values for testing
-let petHolder=new Pet("Damianne",7,"Female","Cat","Short Hair Siamese","Premium Care");
-pets.push(petHolder);
-petHolder=new Pet("Artemis",5,"Female","Cat","Short Hair Calico","Premium Care");
-pets.push(petHolder);
-petHolder=new Pet("Chimera",3,"Female","Cat","Long Hair Tortoishell","Premium Care"); 
-pets.push(petHolder);
 
-
-
-//displaying hard coded values for testing
-displayRows();
-}
-window.onload=init;
 
 
 //-----------------------------MISC fuctions--------------------------------
@@ -139,4 +199,16 @@ function clearForm(){
     document.querySelector('input[name="petType"]:checked').checked=false;
     document.getElementById("txtBreed").value="";
     document.getElementById("selectServices").value="";
+
+    document.getElementById("cn").value="";
+    document.getElementById("ce").value="";
+    document.getElementById("ca").value="";
+    document.getElementById("cc").value="";
+    document.getElementById("cs").value="";
+    document.getElementById("cz").value="";
+
+    document.getElementById("nc").value="";
+    document.getElementById("numC").value="";
+    document.getElementById("ec").value="";
+    document.getElementById("cvv").value="";
     }

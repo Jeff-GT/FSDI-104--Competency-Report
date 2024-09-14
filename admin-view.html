@@ -10,7 +10,7 @@
     <link rel="JS bootstrap CDN" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     <link rel="CSS Bootstrap CDN" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     
-    <title>Register</title>
+    <title>Admin View</title>
 </head>
 <body>
     <header class="register-header">
@@ -27,14 +27,14 @@
         <h2>Register</h2>
         <div class="registry-container">
 
-            <div class=>
-                <div >
+            <div class="register-form">
+                <div>
                     <label for="">Name</label>
-                    <p><input type="text" id="txtName" placeholder="Enter Pet Name"></p>
+                    <p><input type="text" id="txtName"></p>
                 </div>
                 <div>
                     <label for="">Age</label>
-                    <p><input type="number" id="txtAge" placeholder="Enter Pet Age"></p>
+                    <p><input type="number" id="txtAge"></p>
                 </div>
                 <div>
                     <label for="">Gender</label>
@@ -53,13 +53,13 @@
                 </div>
                 <div>
                     <label for="">Breed</label>
-                    <p><input type="text" id="txtBreed" placeholder="Enter Pet Breed"></p>
+                    <p><input type="text" id="txtBreed"></p>
                 </div>
                 <div></div>
                     <label for="">Service</label>
                     <p>
-                        <select required name="services" id="selectServices" placeholder="---Select Service---">
-                            <option value="" selected disabled class="service-selector-default" >---Select Service---</option>
+                        <select required name="services" id="selectServices" >
+                            <option value="" selected disabled class="service-selector-default">---Select Service---</option>
                             <option value="Package #1">Package #1</option>
                             <option value="Package #2">Package #2</option>
                             <option value="Premium Care">Premium Care</option>
@@ -72,77 +72,14 @@
                         <p class="bottom-msg">* If you want more than 1 service for the same pet, enter the same pet details again and select a different service type</p>
                     </p>
                 </div>
+                <div>
+                    <button onclick="register()"><img src="./img/Button icon.png" alt="" class="button-icon">  Register</button>
+                </div>
             </div>
         </div>
-
-        <div class="registry-container">
-            <form action="">
-                <div class=" pay-container">
-                    <div class="pay-form">
-                        <div>
-                            <div>
-                                <h2>Billing Address</h2>
-                            </div>
-                            <div class="input-item">
-                                <label for="customerName">Full Name</label>
-                                <input type="text" name="custName" id="cn" required>
-                            </div>
-                            <div class="input-item">
-                                <label for="email">Email</label>
-                                <input type="email" name="custEmail" id="ce" required>
-                            </div>
-                            <div class="input-item">
-                                <label for="billAdd">Billing Address</label>
-                                <input type="text" name="custAdd" id="ca" required>
-                            </div>
-                            <div class="input-item">
-                            <label for="billCity">City</label>
-                            <input type="text" name="custCity" id="cc" required>
-                            </div>
-                            <div class="input-item">
-                                <label for="billState">State</label>
-                                <input class="pay-container-smaller-form" type="text" name="custState" id="cs" required>
-                                
-                                <label for="billZip">Zip Code</label>
-                                <input class="pay-container-smaller-form zip-control" type="number" name="custZip" id="cz" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="pay">
-                        <h2>Payment</h2>
-                        <div class="input-item">
-                            <label for="Card Name">Mode of Payment</label>
-                            <img src="./img/icons8-paypal-48.png" alt="Paypal">
-                            <img src="./img/icons8-visa-48.png" alt="Debit">
-                            <img src="./img/icons8-mastercard-48.png" alt="credit">
-                            <img src="./img/cash.png" alt="Cash">
-                        </div>
-                        <div class="input-item">
-                            <label for="Card Name">Name On Card</label>
-                            <input type="text" name="nameCard" id="nc" required>
-                        </div>
-                        <div class="input-item">
-                            <label for="Card Name">Card Number</label>
-                            <input type="number" name="numCard" id="numC" autocomplete="cc-number"  placeholder="xxxx xxxx xxxx xxxx" required class="card-number" required>
-                        </div>
-                        <div class="input-item">
-                            <label for="Exp Month">Exp Month</label>
-                            <input type="date" name="nameCard" id="ec"required>
-                        </div>
-                        <div class="input-item">
-                            
-                            <label for="CVV">CVV</label>
-                            <input class="pay-container-smaller-form" type="number" name="nameCard" id="cvv" max="999" min="1" placeholder="xxx" required>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <button onclick="payInfo()"> <img src="./img/Button icon.png" alt="" class="button-icon">  Register</button>
-            </div>
-    </div>
         
         <div class="registered-container">
-            <h2>Your Registered Pets & Services</h2>
+            <h2>Registered Pets</h2>
             <div class="search-control">
                 <input type="search" id="txtSearch" class="mobile-srch">
                 <p><button onclick="search()" ><img src="./img/Button icon.png" alt="" class="button-icon">  Search</button></p>
@@ -177,6 +114,7 @@
 
     <script src="./scripts/register.js"></script>
     <script src="./scripts/display.js"></script>
+    <script src="./scripts/adminView.js"></script>
     
 </body>
 </html>
