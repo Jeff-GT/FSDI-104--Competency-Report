@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scripts/mystyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="JS bootstrap CDN" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    <link rel="CSS Bootstrap CDN" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    
+    <title>Register</title>
+</head>
+<body>
+    <header class="register-header">
+        <div class="main-bar">
+            <a href="index.html"><img src="./img/logo.png" alt="" class="logo"></a>
+            <nav >
+                <a class="title-arrange" href="index.html">Home</a>
+                <a href="register.html">Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="register-main">
+        <h2>Register</h2>
+        <div class="registry-container">
+
+            <div class="register-form">
+                <div>
+                    <label for="">Name</label>
+                    <p><input type="text" id="txtName"></p>
+                </div>
+                <div>
+                    <label for="">Age</label>
+                    <p><input type="number" id="txtAge"></p>
+                </div>
+                <div>
+                    <label for="">Gender</label>
+                    <p>
+                        <input type="radio" name="gender"  value="Male" id="genderID"> - Male 
+                        
+                        <input type="radio" name="gender"  value="Female" id="genderID"> - Female
+                    </p>
+                </div>
+                <div>
+                    <label for="">Pet Type</label>
+                    <p>
+                        <input type="radio" name="petType"  value="Cat"> - Cat
+                        <input type="radio" name="petType"  value="Dog"> - Dog
+                    </p>
+                </div>
+                <div>
+                    <label for="">Breed</label>
+                    <p><input type="text" id="txtBreed"></p>
+                </div>
+                <div></div>
+                    <label for="">Service</label>
+                    <p>
+                        <select required name="services" id="selectServices" >
+                            <option value="" selected disabled class="service-selector-default">---Select Service---</option>
+                            <option value="Package #1">Package #1</option>
+                            <option value="Package #2">Package #2</option>
+                            <option value="Premium Care">Premium Care</option>
+                            <option value="Hair Cut">Hair Cut</option>
+                            <option value="Bath">Bath</option>
+                            <option value="Deep Cleansing">Deep Cleansing</option>
+                            <option value="Facial">Facial</option>
+                            <option value="Teeth Brushing">Teeth Brushing</option>
+                        </select>
+                        <p class="bottom-msg">* If you want more than 1 service for the same pet, enter the same pet details again and select a different service type</p>
+                    </p>
+                </div>
+                <div>
+                    <button onclick="register()"><img src="./img/Button icon.png" alt="" class="button-icon">  Register</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="registered-container">
+            <h2>Registered Pets</h2>
+            <div class="search-control">
+                <input type="search" id="txtSearch" class="mobile-srch">
+                <p><button onclick="search()" ><img src="./img/Button icon.png" alt="" class="button-icon">  Search</button></p>
+            </div>
+            <table class="registered-list">
+                <thead class="registry-table-header">
+                    <th >Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Pet Type</th>
+                    <th>Breed</th>
+                    <th>Service</th>
+                    <th>Action</th>
+                </thead>
+                
+                <tbody id="show">
+                </tbody>
+            </table>
+    </main>
+    <footer class="end-nav">
+        <nav  class="end-nav">
+            <a class="title-arrange" href="index.html">Home</a>
+            <a class="title-arrange" href="register.html">Register</a>
+            <a class="title-arrange"href="">Contact</a>
+        </nav>
+        <nav class="socials">
+            <a href="" class="socials-logo"><img src="/img/icons8-facebook-48.png" alt="" ></a>
+            <a href="" class="socials-logo"><img src="/img/icons8-instagram-50 (1).png" alt=""></a>
+            <a href="" class="socials-logo"><img src="/img/icons8-tiktok-48.png" alt=""></a>
+        </nav>
+    </footer>
+
+    <script src="./scripts/register.js"></script>
+    <script src="./scripts/display.js"></script>
+    
+</body>
+</html>
