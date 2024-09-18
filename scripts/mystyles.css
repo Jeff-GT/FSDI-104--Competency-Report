@@ -362,6 +362,32 @@ header a:hover{
 .card-number{
     font-size: 15;
 }
+
+.admin-bar{
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    height: 10%;
+    width: 30%;
+}
+.admin-bar a{
+    margin-left: 20px;
+    font-size: 20px;
+    color: black;
+}
+.admin-bar a:hover{
+    color: rgb(33, 99, 99);
+}
+
+/*********************Services********************/
+
+.empty-form{
+    background-color: rgb(231, 195, 195);
+}
+
+
 /*********************Footer*********************/
 
 footer{
